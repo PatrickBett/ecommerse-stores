@@ -1,0 +1,94 @@
+{% load static %}
+
+<div>
+  {% for message in messages %}
+    {{message}}
+  {% endfor %}
+</div>
+
+<!DOCTYPE html>
+<html>
+
+<script>
+function validate ()
+{
+var username=document.getElementById("username");
+var password=document.getElementById("password");
+
+if(username.value.trim()==""||password.value.trim()=="")
+  {
+   alert("Blank space not allowed");
+   return false;
+   }
+else
+   {
+   true;
+    }
+}
+</script>
+
+
+
+<style>
+
+
+  
+body{
+background:green;
+height:600px;
+width:300px;
+padding-top:2px;
+padding-left:200px;
+
+}
+
+img{
+  height: 100px;
+  width:120px;
+}
+
+
+.loginbox{
+background:red;
+color:black;
+font-size:35px;
+height:450px;
+width:250px;
+margin:2px;
+padding:20px;
+}
+
+h2{
+background:yellow;
+text-align: center;
+}
+</style>
+<body>
+
+
+
+<form onsubmit="return validate()" method="POST" action="{% url 'login' %}">
+
+
+{%csrf_token%}
+  
+
+   <div class="loginbox">
+   <h2>Login Here</h2>
+    Username:
+<br>
+<input type="text"name="username">
+<br>
+Password:
+<br>
+<input type="password"name="password1">
+<br>
+<br>
+<div class="submit">
+<input type="Submit"name="submit"value="LOGIN">
+</div>
+<a href="">forgot password</a>
+</div>
+</form>
+</body>
+</html>

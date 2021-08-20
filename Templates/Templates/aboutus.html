@@ -1,0 +1,156 @@
+{%load static%}
+
+
+
+<html>
+
+
+
+
+<style>
+
+
+body{
+font-size:30;
+}
+
+
+
+h1{
+background:green;
+color: yellow;
+}
+
+
+
+img{
+width:700px;
+height:500px;
+}
+
+
+
+.basic_information{
+background:cyan;
+padding-top: 20px;
+}
+
+
+.schools{
+background: Violet;
+}
+
+
+.sports {
+background:grey;
+color: yellow;
+}
+
+
+
+.institution_photos{
+background: cyan;
+text-align: center;
+padding-bottom: 30px;
+}
+
+.footer{
+	background-color: black;
+	color: white;
+	text-align: center;
+	padding:5px;
+	margin: 10px;
+	margin-bottom: 10px;
+}
+
+
+</style>
+
+
+<body>
+
+
+
+<div class="basic_information">
+
+
+<p>The institute is located along Kericho -Nakuru highway. It's located in Kipkelion East Constituency
+Kimasian Technical Training Institute is a Chartered public Technical Institute in Kenya. Situated 100m South off Kedowa town, the Institute aspires to be one of the leading institutions of higher learning in Kenya and beyond. We offer quality education that is in tandem with the needs and aspirations of the global village as captured in our Vision, Mission and Core Values. Kimasian Institute locality is rich in Agricultural soils and endowed with tourist attractions. The serene environment makes it an ideal place for learning. This institution started in 2014.
+
+
+
+<p>Background Information
+
+Kimasian Technical and Vocational College is a public Technical and Vocational Training Centre in Kericho County. The college is a certified Kenya National Examination Centre and is a Centre of excellence in Welding and Fabrication course and has state of art equipment from China in trade area.
+
+Admission Requirements
+
+For Diploma courses the minimum entry requirements are an average C- in KCSE or a division II in KCE while Certificate courses the minimum entry requirements are an average D+ in KCSE or a division III in KCE and Artisan courses are open ended.</p>
+
+
+<img src="{%static 'C:\Users\Home\STORES\static\images\Ruto.jpg' %}">
+
+
+ The institution was constructed to enable the students who did not qualified to join the University and Colleges.
+
+</p>
+
+	
+
+
+
+
+</div>
+
+<div class="schools">
+<h1>Departments</h1>
+The departments that have already run in the institution are:
+<li>
+<ul><a href="{% url 'ict'%}">ICT department</a></ul>
+<ul><a href="{% url 'hair_beauty'%}">Hair beauty and Cosmetics</a></ul>
+<ul><a href="{% url 'Electrical'%}">Electrical and Electronic Engineering</a></ul>
+<ul><a href="{% url 'plumbing'%}">Plumbing and Masonry</a></ul>
+
+
+</li>
+
+</div>
+
+<div class="sports">
+<h1>Sports</h1>
+We have also a football training camp where we have produced a nice team consisting of 16 players. The teams are registered based on the schools we have so far. We could also wish to hold the tournament leagues that are to start as from next year.
+<img src="{%static 'C:\Users\Home\STORES\static\images\footballteam.jpg' %}">
+We are also asking the community to contact us if there is any land that is on sale. We need it as a playground for sports.
+</div>
+<br>
+<br>
+
+<div class="institution_photos">
+
+<h1><ul>Institution Photos</ul></h1>
+<img src="{%static 'C:\Users\Home\STORES\static\images\Kimasian.jpg' %}">
+<img src="{%static 'C:\Users\Home\STORES\static\images\kimasian1.jpg' %}">
+<img src="{%static 'C:\Users\Home\STORES\static\images\kimasian2.jpg' %}">
+</div>
+
+<br>
+
+<div class="footer">
+	<h3><b><i>IMPORTANT LINKS<i></i></b></h3>
+
+     <a href="">Email Retrieval</a>
+      <br>
+     <a href="">Notice Board</a>
+      <br>
+     <a href="">ICT Help Desk</a>
+       <br>
+     <a href="">Terms and Conditions</a>
+
+
+
+
+</div>
+
+
+</body>
+</html>

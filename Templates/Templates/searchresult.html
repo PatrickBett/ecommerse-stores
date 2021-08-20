@@ -1,0 +1,23 @@
+
+<html>
+{% block content %}
+
+<h2>Search Results</h2>
+<body bgcolor="pink">
+
+	
+
+{% for search in searchlist %}
+
+	Product: <a href="{{ Product.get_absolute_url }}">  {{search.product}} </a>   
+	 <br>
+	Price:{{search.price}}<br><br>
+
+	-----------------
+	<br>
+	
+
+{% endfor %}
+</body>
+{% endblock content %}
+</html>

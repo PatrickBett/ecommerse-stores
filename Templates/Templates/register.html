@@ -1,0 +1,141 @@
+{% load static %}
+
+<div>
+	{% for message in messages %}
+       {{message}}
+     {% endfor %}
+
+</div>
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Registration</title>
+</head>
+
+
+<style>
+body{
+background:cyan;
+}
+
+
+.form{
+background:orange;
+width:250px;
+padding-left:50px;
+padding-top:30px;
+padding-bottom:30px;
+margin-left: 55px;
+margin-top:20px;
+}
+</style>
+
+<script type="text/javascript">
+	funtion validate()
+	{
+		if (document.registerform.fname.value==""){
+			alert("Please provide  First name");
+			document.registerform.name.focus();
+			return false;
+		}
+if (document.registerform.mname.value==""){
+			alert("Please provide  Middle name");
+			document.registerform.name.focus();
+			return false;
+		}
+		if (document.registerform.lname.value==""){
+			alert("Please provide Last name");
+			document.registerform.name.focus();
+			return false;
+		}
+		if (document.registerform.phoneno.value==""){
+			alert("Please provide  phoneno");
+			document.registerform.name.focus();
+			return false;
+		}
+		if (document.registerform.username.value==""){
+			alert("Please provide  username");
+			document.registerform.name.focus();
+			return false;
+		}
+		if (document.registerform.email.value==""){
+			alert("Please provide  Email");
+			document.registerform.name.focus();
+			return false;
+		}
+		if (document.registerform.password1.value==""){
+			alert("Please provide  password");
+			document.registerform.name.focus();
+			return false;
+		}
+		if (document.registerform.password2.value==""){
+			alert("Please provide a confirmation password");
+			document.registerform.name.focus();
+			return false;
+		}
+	}
+</script>
+
+<body>
+
+<div>
+</div>
+
+
+
+ 
+
+
+        <div class="form">
+
+
+             <form name="registerform" method="POST" action="{% url 'register' %}" onsubmit="return validate()">
+
+        	{%csrf_token%}
+Firstname:
+<br>
+<input type="text" name="firstname">
+<br><br>
+
+Lastname:
+<br>
+<input type="text" name="lastname">
+<br><br>
+
+Username:
+<br>
+<input type="text" name="username">
+<br><br>
+
+
+Email:
+<br>
+<input type="email"name="email">
+<br><br>
+
+
+Password:
+<br>
+<input type="password" name="password1">
+<br><br>
+
+
+Confirm password:
+<input type="password" name="password2">
+<br><br>
+<input type="Submit" name="submit" value="Submit">
+
+
+        </form>
+
+
+    </div>
+
+</body>
+
+
+
+</html>

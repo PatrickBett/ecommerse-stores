@@ -1,0 +1,268 @@
+{% load static %}
+{% static "images" as baseURL %}
+
+
+
+<style type="text/css">
+
+
+
+
+	.product{
+
+
+		background-color: cyan;
+        padding-left: 50px;
+        padding-top: 50px;
+        margin-left: 80px;
+        margin-right: 80px;
+        border: groove;
+        align-content: right;
+        column-count: 3;
+        column-gap: 20px;
+        column-rule: 1px solid lightblue;
+        column-rule-style: solid;
+        column-rule-width: 1px;
+        column-rule-color: lightblue;
+        column-width: 50px;
+
+	}
+
+	a:hover{
+	background-color: black;
+	color:white;
+	
+
+}
+
+a{
+	
+	padding: 0px;
+
+}
+
+
+
+
+.header{
+	background:white;
+	height: 40px;
+	padding-top: 20px;
+	padding-right: 20px;
+	padding-bottom: 20px;
+	text-align: right;
+}
+
+.message{
+	background-color:slategray;
+	color:white;
+	text-align: center;
+	padding-left: 40px;
+	padding-top: 40px;
+	padding-bottom: 3px;
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
+.search{
+	margin-left: 1000px;
+}
+
+.header-content{
+	background-color: green;
+	color: yellow;
+	margin-left: 50px;
+	padding-left: 40px;
+	text-align: center;
+
+}
+
+
+.product-details{
+
+}
+
+
+
+
+
+img{
+	align-items: center;
+}
+
+
+.content{
+	background-color: transparent;
+	text-align: center;
+}
+
+
+
+
+</style>
+
+
+
+
+<div class="header">
+
+
+	 <a href="">LOGIN</a>   |  <a href="">REGISTER</a>
+
+
+</div>
+
+<br>
+
+
+<div class="header-content">
+	<h2><i>SCHOOL CANTEEN</i></h2>
+</div>
+
+<br>
+
+
+
+<div class="content">
+
+   <img src="{% static 'C:\Users\Home\STORES\static\images\soda.jpg' %}">
+
+</div>
+
+
+<br>
+<div class="search">
+
+<form class="navbar-form navbar-left" ,role="search" action="{% url 'searchresult' %}" method="get" >
+
+		
+			<input type="text" name="q" placeholder="Search">
+     
+     		<input type="submit"  name="submit" value="Search">
+
+</form>
+
+
+</div>
+
+<br> 
+
+
+
+<body >
+
+
+
+
+<div class="product" >
+
+
+
+
+{% for product in object_list %}
+
+
+
+
+<div class="product-details">
+
+Product:
+<a href="" >  <i>{{product.product}}</i>  </a>
+<!--<del>initial price:</del>  {{ product.initialprice }}-->
+
+<br>
+
+Price:
+${{product.price}}
+<br>
+
+
+available:
+{{product.available}}
+<br>
+
+offer:
+{{product.offer}}
+<br>
+
+
+
+</div>
+
+
+
+
+<div class="product-image">
+
+
+          <img src="{{baseURL}}//{{product.image}}" height="130" width="130">
+
+</div>
+
+
+
+
+
+<br>
+<br>
+
+
+<button> 
+      <a href="purchases/" >   Add To Cart  </a>  
+ </button>
+
+<br><br>
+
+------------------------
+<br><br>
+{% endfor %}
+<br>
+<br>
+
+
+
+
+</div>
+
+
+
+<br><br><br><br>
+
+
+
+
+<div class="message">
+
+<form method="POST" action="{% url 'emailmessage' %}">
+
+	{% csrf_token %}
+
+Name:
+<input type="text" name="name">
+<br>
+<br>
+
+Email:
+<input type="email" name="email">
+<br>
+<br>
+
+Message:
+
+<input type="text" name="message">
+<br>
+
+<input type="submit"  name="submit" value="SEND">
+
+<input type="reset" name="reset" value="Clear">
+
+</form>
+
+
+
+
+
+</div>
+
+
+</body>
